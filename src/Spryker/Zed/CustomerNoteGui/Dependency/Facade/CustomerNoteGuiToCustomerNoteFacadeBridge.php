@@ -25,31 +25,16 @@ class CustomerNoteGuiToCustomerNoteFacadeBridge implements CustomerNoteGuiToCust
         $this->customerNoteFacade = $customerNoteFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer $customerNoteEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer
-     */
     public function addNote(SpyCustomerNoteEntityTransfer $customerNoteEntityTransfer): SpyCustomerNoteEntityTransfer
     {
         return $this->customerNoteFacade->addNote($customerNoteEntityTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer $customerNoteEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer
-     */
     public function addNoteFromCurrentUser(SpyCustomerNoteEntityTransfer $customerNoteEntityTransfer): SpyCustomerNoteEntityTransfer
     {
         return $this->customerNoteFacade->addNoteFromCurrentUser($customerNoteEntityTransfer);
     }
 
-    /**
-     * @param int $idCustomer
-     *
-     * @return \Generated\Shared\Transfer\CustomerNoteCollectionTransfer
-     */
     public function getNotes(int $idCustomer): CustomerNoteCollectionTransfer
     {
         return $this->customerNoteFacade->getNotes($idCustomer);

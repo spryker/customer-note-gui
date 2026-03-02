@@ -24,11 +24,6 @@ use SprykerTest\Zed\CustomerNoteGui\PageObject\CustomerNotePage;
  */
 class CustomerNoteGuiCest
 {
-    /**
-     * @param \SprykerTest\Zed\CustomerNoteGui\CustomerNoteGuiCommunicationTester $i
-     *
-     * @return void
-     */
     public function testIndexAction(CustomerNoteGuiCommunicationTester $i): void
     {
         $i->sendAjaxPostRequest(CustomerNotePage::URL, [
@@ -37,11 +32,6 @@ class CustomerNoteGuiCest
         $i->canSeeResponseCodeIs(200);
     }
 
-    /**
-     * @param \SprykerTest\Zed\CustomerNoteGui\CustomerNoteGuiCommunicationTester $i
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     protected function getCustomer(CustomerNoteGuiCommunicationTester $i): CustomerTransfer
     {
         return $i->haveCustomer();

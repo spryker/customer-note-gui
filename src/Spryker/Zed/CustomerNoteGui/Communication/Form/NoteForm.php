@@ -31,9 +31,6 @@ class NoteForm extends AbstractType
      */
     protected const VALIDATION_MESSAGE = 'Please add your message to post a comment';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return static::FORM_NAME;

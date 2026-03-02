@@ -16,9 +16,6 @@ use Symfony\Component\Form\FormInterface;
 
 class CustomerNoteGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\CustomerNoteGui\Communication\Form\DataProvider\NoteFormDataProvider
-     */
     public function createNoteFormDataProvider(): NoteFormDataProvider
     {
         return new NoteFormDataProvider();
@@ -35,9 +32,6 @@ class CustomerNoteGuiCommunicationFactory extends AbstractCommunicationFactory
         return $this->getFormFactory()->create(NoteForm::class, $formData, $formOptions);
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerNoteGui\Dependency\Facade\CustomerNoteGuiToCustomerNoteFacadeInterface
-     */
     public function getCustomerNoteFacade(): CustomerNoteGuiToCustomerNoteFacadeInterface
     {
         return $this->getProvidedDependency(CustomerNoteGuiDependencyProvider::FACADE_CUSTOMER_NOTE);

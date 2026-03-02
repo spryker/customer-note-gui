@@ -12,24 +12,9 @@ use Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer;
 
 interface CustomerNoteGuiToCustomerNoteFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer $customerNoteEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer
-     */
     public function addNote(SpyCustomerNoteEntityTransfer $customerNoteEntityTransfer): SpyCustomerNoteEntityTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer $customerNoteEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\SpyCustomerNoteEntityTransfer
-     */
     public function addNoteFromCurrentUser(SpyCustomerNoteEntityTransfer $customerNoteEntityTransfer): SpyCustomerNoteEntityTransfer;
 
-    /**
-     * @param int $idCustomer
-     *
-     * @return \Generated\Shared\Transfer\CustomerNoteCollectionTransfer
-     */
     public function getNotes(int $idCustomer): CustomerNoteCollectionTransfer;
 }

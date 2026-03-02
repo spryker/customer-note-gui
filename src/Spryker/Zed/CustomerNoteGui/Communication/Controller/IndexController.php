@@ -103,11 +103,6 @@ class IndexController extends AbstractController
         return $noteTransfer;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer|null
-     */
     protected function getCustomerTransfer(Request $request): ?CustomerTransfer
     {
         // @deprecated Exists for BC reasons. Will be removed in the next major release.
