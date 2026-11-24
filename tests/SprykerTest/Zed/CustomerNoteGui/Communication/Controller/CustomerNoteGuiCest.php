@@ -32,6 +32,18 @@ class CustomerNoteGuiCest
         $i->canSeeResponseCodeIs(200);
     }
 
+    public function testIndexActionReadsTheCustomerIdFromTheQueryWhenNoCustomerTransferIsPassed(CustomerNoteGuiCommunicationTester $i): void
+    {
+        // Arrange
+        $url = sprintf('%s?%s=%d', CustomerNotePage::URL, CustomerNotePage::PARAM_ID_CUSTOMER, $this->getCustomer($i)->getIdCustomerOrFail());
+
+        // Act
+        $i->sendAjaxPostRequest($url);
+
+        // Assert
+        $i->canSeeResponseCodeIs(200);
+    }
+
     protected function getCustomer(CustomerNoteGuiCommunicationTester $i): CustomerTransfer
     {
         return $i->haveCustomer();

@@ -13,4 +13,6 @@ class CustomerNotePage
      * @var string
      */
     public const URL = '/customer-note-gui';
+
+    public const string PARAM_ID_CUSTOMER = 'id-customer';
 }

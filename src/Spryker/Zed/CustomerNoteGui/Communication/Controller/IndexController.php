@@ -32,6 +32,8 @@ class IndexController extends AbstractController
      */
     protected const CUSTOMER_ID_PARAM = 'customer-id';
 
+    protected const string CUSTOMER_ID_QUERY_PARAM = 'id-customer';
+
     /**
      * @var string
      */
@@ -53,7 +55,7 @@ class IndexController extends AbstractController
 
         $idCustomer = $customerTransfer !== null
             ? $customerTransfer->getIdCustomer()
-            : $request->request->get(static::CUSTOMER_ID_PARAM);
+            : $this->findIdCustomer($request);
 
         $idCustomer = $this->castId($idCustomer);
 
@@ -101,6 +103,11 @@ class IndexController extends AbstractController
         $noteTransfer->setMessage($message);
 
         return $noteTransfer;
+    }
+
+    protected function findIdCustomer(Request $request): string|int|float|bool|null
+    {
+        return $request->request->get(static::CUSTOMER_ID_PARAM) ?? $request->query->get(static::CUSTOMER_ID_QUERY_PARAM);
     }
 
     protected function getCustomerTransfer(Request $request): ?CustomerTransfer
